@@ -13,5 +13,5 @@ matplotlib==3.10.7
 joblib==1.5.2
 xgboost==3.1.3
 
-# Attribution environment
-shap==0.46.0
+# Attribution environment (verified from tools/execute_p3_13_attribution.py line 157)
+shap==0.49.1
