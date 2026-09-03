@@ -1,0 +1,10 @@
+﻿{
+  "release_tag": "v1.0-paper-submission",
+  "repository_name": "phishing-unseen-site-evaluation",
+  "author": "Sara Arif",
+  "paper_title": "Beyond Random Splits: Class-Conditioned Site Exposure and Attribution Change in Phishing URL Evaluation",
+  "date_prepared": "2026-09-03",
+  "reproducibility_status": "FROZEN_AND_AUDITED",
+  "scientific_freeze": true,
+  "commit_count": 17
+}
