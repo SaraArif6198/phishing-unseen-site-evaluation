@@ -1,0 +1,17 @@
+﻿{
+  "M1": {
+    "C": [0.01, 0.1, 1.0, 10.0]
+  },
+  "M2": {
+    "learning_rate": [0.05, 0.1],
+    "max_iter": [100, 200],
+    "max_leaf_nodes": [31, 63]
+  },
+  "M3": {
+    "C": [0.1, 1.0, 10.0],
+    "max_features": [25000, 50000]
+  },
+  "selection_metric": "MCC",
+  "decision_threshold": 0.5,
+  "random_seed": 42
+}
