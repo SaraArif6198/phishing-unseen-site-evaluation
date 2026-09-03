@@ -1,0 +1,87 @@
+digraph Framework {
+    graph [
+        rankdir=TB,
+        splines=ortho,
+        nodesep=0.28,
+        ranksep=0.40,
+        pad=0.18,
+        margin=0.08,
+        bgcolor="white",
+        fontname="Helvetica",
+        fontsize=18,
+        size="7.0,10.0!",
+        ratio="compress"
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fillcolor="white",
+        color="black",
+        penwidth=1.0,
+        fontname="Helvetica",
+        fontsize=10,
+        margin="0.07,0.05"
+    ];
+
+    edge [color="black", penwidth=1.0, arrowsize=0.7];
+
+    subgraph cluster_data {
+        label="Data"; fontsize=12; style="rounded"; color="black";
+        phish  [label="PhishTank\nphishing URLs"];
+        benign [label="Tranco + Common Crawl\nbenign URLs"];
+        corpus [label="Frozen corpus\n124,154 URLs", fillcolor="gray95", penwidth=1.3];
+    }
+
+    subgraph cluster_prep {
+        label="Preparation"; fontsize=12; style="rounded"; color="black";
+        parse [label="Parsing + PSL grouping"];
+        audit [label="Integrity + leakage audit"];
+        ready [label="Analysis-ready corpus", fillcolor="gray95", penwidth=1.3];
+    }
+
+    subgraph cluster_regimes {
+        label="Evaluation regimes"; fontsize=12; style="rounded"; color="black";
+        A [label="A\nRandom URL split", fillcolor="gray95"];
+        B [label="B\nHostname-disjoint\n(diagnostic)", style="rounded,filled,dashed", fillcolor="gray99"];
+        C [label="C\nPrivate-PSL site-disjoint", fillcolor="gray95", penwidth=1.3];
+        D [label="D\nICANN-only site-disjoint\n(diagnostic)", style="rounded,filled,dashed", fillcolor="gray99"];
+        { rank=same; A; B }
+        { rank=same; C; D }
+    }
+
+    subgraph cluster_models {
+        label="Models"; fontsize=12; style="rounded"; color="black";
+        tune [label="Validation-based tuning\nThreshold = 0.5", fillcolor="gray95"];
+        M1 [label="M1\nLR + engineered features"];
+        M2 [label="M2\nHGB + engineered features"];
+        M3 [label="M3\nLR + char TF-IDF"];
+    }
+
+    subgraph cluster_analyses {
+        label="Analyses"; fontsize=12; style="rounded"; color="black";
+        perf [label="Performance\nMCC primary + secondary metrics", fillcolor="gray95"];
+        infer [label="Site-cluster\nuncertainty analysis", fillcolor="gray95"];
+        attr [label="Attribution\nanalysis"];
+        err  [label="Error\nanalysis"];
+        supp [label="Supporting diagnostics\ncap, ablation, shortener, B/D"];
+    }
+
+    subgraph cluster_outputs {
+        label="Study outputs"; fontsize=12; style="rounded"; color="black";
+        rq1 [label="RQ1\nA vs C evaluation"];
+        rq2 [label="RQ2\nPerformance retention"];
+        rq3 [label="RQ3\nAttribution change"];
+    }
+
+    phish -> corpus; benign -> corpus;
+    corpus -> parse; parse -> audit; audit -> ready;
+    ready -> A; ready -> B; ready -> C; ready -> D;
+    A -> tune; B -> tune; C -> tune; D -> tune;
+    tune -> M1; tune -> M2; tune -> M3;
+    M1 -> perf; M2 -> perf; M3 -> perf;
+    perf -> infer; perf -> attr; perf -> err; perf -> supp;
+    infer -> rq1; perf -> rq2; attr -> rq3;
+    { rank=same; attr; err; supp }
+    { rank=same; rq1; rq2; rq3 }
+}
