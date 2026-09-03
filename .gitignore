@@ -1,0 +1,46 @@
+﻿# Environment and Security
+.env
+.env.*
+*.key
+*.pem
+*.token
+credentials/
+secrets/
+
+# Python Caches & Environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+
+# IDE and System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs and Temporary Artifacts
+*.log
+logs/
+tmp/
+temp/
+scratch/
+
+# Raw Data and Non-Redistributable Corpora
+data/raw/
+data/private/
+data/derived_private/
+*.jsonl
+
+# Exclude Manuscripts & Paper Drafts
+docs/manuscript/
+manuscript/
+paper/
+*.docx
+
