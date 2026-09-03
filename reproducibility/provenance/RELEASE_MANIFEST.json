@@ -4,7 +4,7 @@
   "author": "Sara Arif",
   "paper_title": "Beyond Random Splits: Class-Conditioned Site Exposure and Attribution Change in Phishing URL Evaluation",
   "date_prepared": "2026-09-03",
-  "reproducibility_status": "FROZEN_AND_AUDITED",
+  "reproducibility_status": "R1R_AUDITED_READY_FOR_PRIVATE_REMOTE",
   "scientific_freeze": true,
-  "commit_count": 17
+  "release_history_verified": true
 }
