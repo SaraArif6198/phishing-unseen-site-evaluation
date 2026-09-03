@@ -1,0 +1,25 @@
+{
+  "parser_module": "src/parsing/phase2c_url_parser.py",
+  "status": "PARSER_CONTRACT_FROZEN",
+  "missing_scheme_policy_status": "MISSING_SCHEME_NORMALIZATION_POLICY_FROZEN_NO_SCHEME_INFERENCE",
+  "environment": {
+    "python_version": "3.10.11",
+    "tldextract_version": "5.3.0",
+    "idna_version": "3.10"
+  },
+  "frozen_resources": {
+    "public_suffix_list_path": "data/raw/frozen_resources/public_suffix_list/public_suffix_list_2026-08-17.dat",
+    "public_suffix_list_sha256": "155b43d46932e933f622365225e7861288c36a45380b1f7d00b3d09748926226"
+  },
+  "hashes": {
+    "whole_file_sha256": "d7735660fed1e71fd236dfc4a1b1f8fdba5ad35ccb46db684ef2afd082241cd3",
+    "parse_url_sha256": "8b638afe272806193d1b1eb985e15bd153bbecec200ccd2dcbaadfe98b424908",
+    "normalized_url_sha256": "267149b2f30225697b026a25a9d99b4305386fc6f53465aaba675495004bffdd"
+  },
+  "configuration": {
+    "fallback_to_snapshot": false,
+    "icann_include_private": false,
+    "private_include_private": true,
+    "known_shorteners_count": 12
+  }
+}

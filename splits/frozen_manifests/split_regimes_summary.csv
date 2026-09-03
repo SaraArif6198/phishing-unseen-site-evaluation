@@ -1,0 +1,5 @@
+﻿Regime,Definition,Seeds,Site_Condition
+A,Random URL-level split,"13, 42, 73, 101, 2026",Site overlap permitted by design
+B,Hostname-disjoint diagnostic,42,Zero hostname overlap (residual site overlap permitted)
+C,Private-PSL registrable-site-disjoint split,"42, 123, 456, 789, 1234",Zero private-PSL site overlap
+D,ICANN-only registrable-site-disjoint split,42,Zero ICANN parent site overlap
