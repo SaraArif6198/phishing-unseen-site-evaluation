@@ -17,7 +17,7 @@ This study presents a controlled empirical evaluation comparing:
 
 Evaluated representation and model families:
 - **M1:** Transparent engineered linear model (Logistic Regression over 22 standardized URL features).
-- **M2:** Nonlinear engineered-feature tree ensemble (`sklearn.ensemble.HistGradientBoostingClassifier`).
+- **M2:** Nonlinear tree-based engineered-feature model (`sklearn.ensemble.HistGradientBoostingClassifier`).
 - **M3:** Sparse character-level representation (Character $n$-gram TF-IDF $n \in [2, 6]$ + Logistic Regression).
 
 ---
@@ -37,14 +37,14 @@ phishing-unseen-site-evaluation/
 │   ├── features/             # 22-feature engineered URL vectorization
 │   ├── audit/                # Source-structure & multiplicity audits
 │   ├── splits/               # Stratified random and site-disjoint splitters
-│   ├── models/               # Model fitting & hyperparameter selection
-│   ├── evaluation/           # Canonical metric computation
+│   ├── models/               # Model family documentation
+│   ├── evaluation/           # Frozen execution runners & canonical metrics
 │   ├── bootstrap/            # Site-cluster percentile bootstrap
 │   └── attribution/          # Within-model feature attribution
 ├── configs/                  # Hyperparameter contracts & search grids
-├── splits/                   # Frozen split manifests and hashes
+├── splits/                   # Frozen split regime definitions
 ├── manifests/                # Provenance and SHA-256 verification records
-├── results/                  # Canonical output CSVs & diagnostic tables
+├── results/                  # Canonical aggregate output CSVs & diagnostic tables
 ├── figures/                  # Publication-ready figures (PNG, SVG, PDF)
 ├── data/                     # Data acquisition and sharing guidance
 └── reproducibility/          # Artifact verification instructions & hashes
@@ -55,7 +55,7 @@ phishing-unseen-site-evaluation/
 ## 🔒 Provenance & Reproducibility Notice
 
 > [!NOTE]
-> This repository is a curated reproducibility release assembled from frozen research artifacts. All split assignments, hyperparameter selection rules, metric values, bootstrap intervals, and attribution rankings are frozen and hash-verified.
+> This repository is a curated reproducibility release assembled from frozen research artifacts. All split regime definitions, hyperparameter selection rules, metric values, bootstrap intervals, and attribution rankings are frozen and hash-verified.
 
 For detailed hash verification procedures, see [`reproducibility/README.md`](reproducibility/README.md).  
 For dataset acquisition guidelines and redistribution terms, see [`data/README.md`](data/README.md).
@@ -67,11 +67,10 @@ For dataset acquisition guidelines and redistribution terms, see [`data/README.m
 If you reference this work or utilize these reproducibility artifacts, please cite:
 
 ```bibtex
-@article{arif2026beyond,
-  author    = {Sara Arif},
-  title     = {Beyond Random Splits: Class-Conditioned Site Exposure and Attribution Change in Phishing URL Evaluation},
-  journal   = {IEEE Access},
-  year      = {2026},
-  note      = {Reproducibility repository: https://github.com/saraaariff/phishing-unseen-site-evaluation}
+@misc{arif2026beyond,
+  author       = {Sara Arif},
+  title        = {Beyond Random Splits: Class-Conditioned Site Exposure and Attribution Change in Phishing URL Evaluation},
+  year         = {2026},
+  note         = {Manuscript and associated reproducibility artifacts}
 }
 ```
