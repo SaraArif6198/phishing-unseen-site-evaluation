@@ -1,0 +1,4 @@
+Model,Representation,Estimator,Attribution
+M1,22 engineered URL features,Standardized logistic regression,Standardized coefficients
+M2,22 engineered URL features,HistGradientBoosting,TreeSHAP + permutation importance
+M3,Character TF-IDF n-grams,Logistic regression,Top n-gram coefficients

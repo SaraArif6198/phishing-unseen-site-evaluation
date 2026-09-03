@@ -1,0 +1,7 @@
+Regime,Model,FP count,FN count,FP rate (%),FN rate (%),Source
+A,M1,2686,946,34.0,8.8,data/interim/phase3/p3_14_error_analysis/P3_14_FP_FN_SUMMARY.csv
+A,M2,369,492,4.7,4.6,data/interim/phase3/p3_14_error_analysis/P3_14_FP_FN_SUMMARY.csv
+A,M3,86,134,1.1,1.2,data/interim/phase3/p3_14_error_analysis/P3_14_FP_FN_SUMMARY.csv
+C,M1,2408,2042,30.8,19.0,data/interim/phase3/p3_14_error_analysis/P3_14_FP_FN_SUMMARY.csv
+C,M2,695,2111,8.9,19.7,data/interim/phase3/p3_14_error_analysis/P3_14_FP_FN_SUMMARY.csv
+C,M3,596,1004,7.6,9.4,data/interim/phase3/p3_14_error_analysis/P3_14_FP_FN_SUMMARY.csv

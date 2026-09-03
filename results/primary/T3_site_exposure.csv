@@ -1,0 +1,4 @@
+Variant,A benign exposure (%),C benign exposure (%),A phishing exposure (%),C phishing exposure (%),Source
+uncapped,99.7,0.0,64.6,0.0,data/interim/phase2c/step19_private_psl_site_disjoint/regime_a_vs_c_seed42_exposure_comparison.csv
+cap10,98.9,0.0,29.2,0.0,data/interim/phase2c/step19_private_psl_site_disjoint/regime_a_vs_c_seed42_exposure_comparison.csv
+cap5,97.6,0.0,28.2,0.0,data/interim/phase2c/step19_private_psl_site_disjoint/regime_a_vs_c_seed42_exposure_comparison.csv

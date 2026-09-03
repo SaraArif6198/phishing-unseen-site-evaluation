@@ -1,0 +1,3 @@
+Regime,Definition,Seed,Train/Test site condition,Source
+A,Random URL-level split,42 (primary); five frozen A seeds,Site overlap permitted by design,Phase-2C split contracts
+C,Private-PSL registrable-site-disjoint split,42 (primary); five frozen C seeds,Zero private-PSL site overlap,data/interim/phase2c/step19_private_psl_site_disjoint/regime_c_split_summary.json

@@ -1,0 +1,7 @@
+Model,Metric,Value,Interpretation scope,Source
+M1,global_abs_coefficient_spearman,0.920,within-model A42/C42 descriptive,data/interim/phase3/p3_13_attribution/P3_13_ATTRIBUTION_SUMMARY.csv
+M2,global_mean_abs_shap_spearman,0.993,within-model A42/C42 descriptive,data/interim/phase3/p3_13_attribution/P3_13_ATTRIBUTION_SUMMARY.csv
+M2,mean_raw_local_change,2.958,within-row descriptive,data/interim/phase3/p3_13_attribution/P3_13_ATTRIBUTION_SUMMARY.csv
+M2,mean_normalized_local_change,0.392,within-row descriptive,data/interim/phase3/p3_13_attribution/P3_13_ATTRIBUTION_SUMMARY.csv
+M3,shared_token_abs_coefficient_spearman,0.737,shared-token descriptive,data/interim/phase3/p3_13_attribution/P3_13_ATTRIBUTION_SUMMARY.csv
+M3,top50_jaccard,0.515,top-token descriptive,data/interim/phase3/p3_13_attribution/P3_13_ATTRIBUTION_SUMMARY.csv

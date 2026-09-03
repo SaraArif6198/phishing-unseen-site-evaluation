@@ -1,0 +1,13 @@
+Ablation,Model,Test MCC,Delta vs full C42,Source
+AB1,M1,0.468,-0.038,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB1,M2,0.681,-0.024,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB2,M1,0.492,-0.013,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB2,M2,0.690,-0.015,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB3,M1,0.507,0.002,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB3,M2,0.700,-0.005,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB4,M1,0.409,-0.097,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB4,M2,0.544,-0.161,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB5a,M1,0.382,-0.124,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB5a,M2,0.420,-0.285,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB5b,M1,0.000,-0.506,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv
+AB5b,M2,0.000,-0.706,data/interim/phase3/p3_10_source_feature_ablations/p3_10_source_feature_ablation_summary.csv

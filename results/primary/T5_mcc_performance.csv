@@ -1,0 +1,4 @@
+Model,A five-seed MCC (mean ± SD),C five-seed MCC (mean ± SD),A42−C42 MCC,95% site-cluster percentile bootstrap interval,Source result IDs
+M1,0.613 ± 0.011,0.585 ± 0.056,0.095,"[-0.039, 0.235]",P3_16 manifest: P3-12 MCC rows
+M2,0.905 ± 0.003,0.770 ± 0.066,0.200,"[0.102, 0.315]",P3_16 manifest: P3-12 MCC rows
+M3,0.974 ± 0.002,0.863 ± 0.031,0.151,"[0.082, 0.247]",P3_16 manifest: P3-12 MCC rows
