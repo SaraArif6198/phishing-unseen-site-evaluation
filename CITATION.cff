@@ -1,0 +1,17 @@
+﻿cff-version: 1.2.0
+message: "If you use these reproducibility artifacts or code, please cite it as below."
+authors:
+  - family-names: "Arif"
+    given-names: "Sara"
+    email: "saraariff2005@gmail.com"
+    affiliation: "Department of Computer Science, University of Chakwal, Chakwal, Pakistan"
+title: "Beyond Random Splits: Reproducibility Artifacts for Phishing URL Evaluation"
+version: 1.0.0
+date-released: 2026-09-03
+repository-code: "https://github.com/saraaariff/phishing-unseen-site-evaluation"
+keywords:
+  - phishing URL detection
+  - registrable site disjoint evaluation
+  - Public Suffix List
+  - machine learning generalization
+  - feature attribution
