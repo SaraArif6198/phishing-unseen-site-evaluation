@@ -6,7 +6,7 @@ This document describes the provenance, acquisition procedure, and redistributio
 
 ---
 
-## 📊 Corpus Provenance & Composition
+##  Corpus Provenance & Composition
 
 The primary evaluation corpus comprises **124,154 DNS-host URLs**:
 - **Phishing Stream**: **71,565 URLs** (57.6%) originating from **27,668** unique private-PSL registrable sites.
@@ -18,7 +18,7 @@ The primary evaluation corpus comprises **124,154 DNS-host URLs**:
 
 ---
 
-## 🔒 Data Redistribution Policy
+##  Data Redistribution Policy
 
 > [!IMPORTANT]
 > The raw URL strings and combined derived corpus are **not currently redistributed directly** in this repository pending formal verification of multi-source redistribution eligibility under applicable terms.
