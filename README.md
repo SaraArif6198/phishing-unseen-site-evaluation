@@ -7,7 +7,7 @@ This repository provides frozen reproducibility artifacts, execution utilities, 
 
 ---
 
-## 📌 Overview & Scope
+##  Overview & Scope
 
 Evaluation protocols in URL-based phishing detection predominantly rely on random URL-level train-test splits. Under random partitioning, distinct URLs belonging to the same registrable site can appear in both training and test partitions, creating **class-conditioned train-test site exposure**.
 
@@ -22,7 +22,7 @@ Evaluated representation and model families:
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 phishing-unseen-site-evaluation/
@@ -52,7 +52,7 @@ phishing-unseen-site-evaluation/
 
 ---
 
-## 🔒 Provenance & Reproducibility Notice
+##  Provenance & Reproducibility Notice
 
 > [!NOTE]
 > This repository is a curated reproducibility release assembled from frozen research artifacts. All split regime definitions, hyperparameter selection rules, metric values, bootstrap intervals, and attribution rankings are frozen and hash-verified.
@@ -62,7 +62,7 @@ For dataset acquisition guidelines and redistribution terms, see [`data/README.m
 
 ---
 
-## 📜 Citation
+##  Citation
 
 If you reference this work or utilize these reproducibility artifacts, please cite:
 
