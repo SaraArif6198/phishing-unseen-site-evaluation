@@ -4,7 +4,7 @@ This directory contains verification instructions, execution manifests, and froz
 
 ---
 
-## 🔍 SHA-256 Verification Guide
+##  SHA-256 Verification Guide
 
 Key artifact hashes recorded in `manifests/hashes/reproducibility_hashes.csv`:
 
@@ -20,7 +20,7 @@ Key artifact hashes recorded in `manifests/hashes/reproducibility_hashes.csv`:
 
 ---
 
-## ⚡ Execution Invariants & Fail-Loud Governance
+##  Execution Invariants & Fail-Loud Governance
 
 1. **Train-Only Fitting Boundary**: Scalers (`StandardScaler`), vectorizers (`TfidfVectorizer`), and model weights MUST be fit strictly on Train partitions. Cross-partition fitting is prohibited.
 2. **Validation-Only Tuning Boundary**: Hyperparameter optimization is evaluated solely on Validation MCC.
