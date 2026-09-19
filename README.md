@@ -1,76 +1,68 @@
-﻿# Beyond Random Splits: Reproducibility Artifacts for Phishing URL Evaluation
+# Beyond Random Splits: Class-Conditioned Site Exposure and Attribution Change in Phishing URL Evaluation
 
-This repository provides frozen reproducibility artifacts, execution utilities, evaluation metrics, statistical bootstrap outputs, attribution summaries, figures, and environment manifests for the scientific paper:
+This repository provides frozen code, configuration, result summaries, manifests, and documentation supporting the manuscript Beyond Random Splits: Class-Conditioned Site Exposure and Attribution Change in Phishing URL Evaluation. It documents a controlled comparison between random URL-level evaluation and registrable-site-disjoint evaluation; it is not a live detection service or a deployment claim.
 
-> **Beyond Random Splits: Class-Conditioned Site Exposure and Attribution Change in Phishing URL Evaluation**  
-> *Sara Arif* (Department of Computer Science, University of Chakwal, Pakistan)
+## Overview
 
----
+Random URL-level partitions can place different URLs from the same registrable site in both training and Test data. The study quantifies class-conditioned site exposure under random URL-level and private-PSL registrable-site-disjoint regimes. M1 uses standardized engineered URL features with logistic regression, M2 uses engineered features with histogram gradient boosting, and M3 uses character n-gram TF-IDF with logistic regression. Attribution summaries are descriptive and interpreted within model family only.
 
-## 📌 Overview & Scope
+## Manuscript
 
-Evaluation protocols in URL-based phishing detection predominantly rely on random URL-level train-test splits. Under random partitioning, distinct URLs belonging to the same registrable site can appear in both training and test partitions, creating **class-conditioned train-test site exposure**.
+The associated manuscript is under revision. This repository is a reproducibility release for frozen reported analyses; it does not imply journal acceptance.
 
-This study presents a controlled empirical evaluation comparing:
-- **Regime A (Random URL-Level Comparator):** Conventional 70/15/15 stratified random URL-level split over 5 frozen seeds (`{13, 42, 73, 101, 2026}`).
-- **Regime C (Primary Private-PSL Site-Disjoint Split):** Group-atomic partitioning enforcing zero registrable-site overlap (`0.0%` test exposure) over 5 frozen seeds (`{42, 123, 456, 789, 1234}`).
+## Key evaluation design
 
-Evaluated representation and model families:
-- **M1:** Transparent engineered linear model (Logistic Regression over 22 standardized URL features).
-- **M2:** Nonlinear tree-based engineered-feature model (`sklearn.ensemble.HistGradientBoostingClassifier`).
-- **M3:** Sparse character-level representation (Character $n$-gram TF-IDF $n \in [2, 6]$ + Logistic Regression).
+- Regime A uses 70/15/15 label-stratified random URL-level partitions with frozen seeds 13, 42, 73, 101, and 2026.
+- Regime C assigns private-PSL registrable-site groups atomically to 70/15/15 partitions with frozen seeds 42, 123, 456, 789, and 1234.
+- Seed 42 is the A-side matched-analysis seed and the primary Regime-C split for the direct A42-C42 context. All five Regime-A seeds remain equal for aggregate reporting.
+- Predictions use a fixed 0.5 threshold. Hyperparameters are selected using Validation MCC; threshold tuning is excluded.
+- Statistical uncertainty uses class-stratified whole-registrable-site percentile bootstrap resampling.
 
----
+## Repository structure
 
-## 📁 Repository Structure
+- configs: frozen model and selection contracts
+- data: provenance and redistribution guidance
+- environment: environment specifications
+- figures: reported figures
+- manifests: hashes and artifact manifests
+- reproducibility: verification and execution-governance guidance
+- results: canonical aggregate outputs, including bootstrap summaries
+- splits: frozen split definitions
+- src: acquisition, parsing, feature, evaluation, bootstrap, and attribution code
 
-```
-phishing-unseen-site-evaluation/
-├── README.md                 # Primary publication & reproducibility documentation
-├── LICENSE                   # MIT Code License
-├── CITATION.cff              # Machine-readable metadata citation
-├── requirements.txt          # Python package requirements
-├── environment/              # Python environment specs and runtime lock
-├── src/                      # Cleaned python execution modules
-│   ├── acquisition/          # Source stream acquisition scripts
-│   ├── parsing/              # IDNA UTS-46 & Public Suffix List parsing
-│   ├── features/             # 22-feature engineered URL vectorization
-│   ├── audit/                # Source-structure & multiplicity audits
-│   ├── splits/               # Stratified random and site-disjoint splitters
-│   ├── models/               # Model family documentation
-│   ├── evaluation/           # Frozen execution runners & canonical metrics
-│   ├── bootstrap/            # Site-cluster percentile bootstrap
-│   └── attribution/          # Within-model feature attribution
-├── configs/                  # Hyperparameter contracts & search grids
-├── splits/                   # Frozen split regime definitions
-├── manifests/                # Provenance and SHA-256 verification records
-├── results/                  # Canonical aggregate output CSVs & diagnostic tables
-├── figures/                  # Publication-ready figures (PNG, SVG, PDF)
-├── data/                     # Data acquisition and sharing guidance
-└── reproducibility/          # Artifact verification instructions & hashes
-```
+## Reproducibility
 
----
+Preprocessing is fit within each Train partition, hyperparameters are selected on Validation MCC, and Test evaluation follows selection. Split definitions, seed registries, environment records, and SHA-256 manifests document the frozen protocol.
 
-## 🔒 Provenance & Reproducibility Notice
+## Primary results
 
-> [!NOTE]
-> This repository is a curated reproducibility release assembled from frozen research artifacts. All split regime definitions, hyperparameter selection rules, metric values, bootstrap intervals, and attribution rankings are frozen and hash-verified.
+Canonical aggregate results are in results/primary. Reported values are specific to the frozen corpus and evaluation protocol and are not presented as a deployment guarantee.
 
-For detailed hash verification procedures, see [`reproducibility/README.md`](reproducibility/README.md).  
-For dataset acquisition guidelines and redistribution terms, see [`data/README.md`](data/README.md).
+## Statistical uncertainty
 
----
+MCC is the primary performance metric. The frozen file results/bootstrap/P3_12_CI_SUMMARY.csv contains 95% site-cluster percentile intervals for MCC and eight secondary metrics across 30 canonical Regime-A/Regime-C seed-model identities. Only MCC has a direct native A42-C42 difference interval. Secondary intervals are supporting and descriptive; five-seed summaries are descriptive and no p-values were generated. The compact manuscript MCC interval table remains at results/bootstrap/P3_12_site_cluster_bootstrap_intervals.csv.
 
-## 📜 Citation
+## Attribution analysis
 
-If you reference this work or utilize these reproducibility artifacts, please cite:
+M1 uses coefficients on Train-standardized features, M2 uses raw-model-output TreeSHAP values, and M3 uses coefficient summaries over its character representation. Their magnitudes are not directly comparable across model families.
 
-```bibtex
-@misc{arif2026beyond,
-  author       = {Sara Arif},
-  title        = {Beyond Random Splits: Class-Conditioned Site Exposure and Attribution Change in Phishing URL Evaluation},
-  year         = {2026},
-  note         = {Manuscript and associated reproducibility artifacts}
-}
-```
+## Data availability
+
+Data provenance, corpus-construction records, split definitions, and derived reproducibility artifacts are documented here. Source datasets remain subject to their providers access and redistribution conditions. Raw URL strings and the combined derived corpus are not redistributed pending verification of multi-source redistribution eligibility. The repository provides code, frozen metadata, manifests, and result artifacts that document the reported protocol.
+
+## Code availability
+
+Code and reproducibility artifacts supporting the study are publicly available in this repository. The v1.1-revision-support release adds documentation and previously retained frozen reproducibility artifacts without recomputing analyses or changing reported scientific results.
+
+## Citation
+
+Please use CITATION.cff. The manuscript has no repository-invented DOI or publication metadata.
+
+## License
+
+Repository code and documentation are licensed under the MIT License. Third-party source datasets and Public Suffix List material remain subject to their original terms; see data/README.md.
+
+## Reproducibility release history
+
+- v1.0-paper-submission preserves the repository state corresponding to the original submitted manuscript.
+- v1.1-revision-support adds documentation and the previously retained frozen secondary confidence-interval summary. No scientific analysis was recomputed.

@@ -44,3 +44,6 @@ manuscript/
 paper/
 *.docx
 
+
+# Internal revision and reviewer working material
+_revision_forensic_audit/
